@@ -21,6 +21,7 @@
         android:paddingBottom="15dp"/>
     <LinearLayout
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:gravity="center">
@@ -65,5 +66,74 @@
         android:textSize="28sp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"/>
+=======
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/layout_background"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp">
+
+        <Spinner
+            android:id="@+id/spinner_first"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.7"
+            android:background="@drawable/spinner_background"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <EditText
+            android:id="@+id/et_input1"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_background"
+            android:fontFamily="@font/heebo_bold"
+            android:gravity="center"
+            android:hint="Enter Temperature"
+            android:inputType="numberDecimal"
+            android:maxLength="10"
+            android:textColor="@color/black"
+            android:textColorHint="#7E7E7E"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/layout_background">
+        <Spinner
+            android:id="@+id/spinner_second"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="@drawable/spinner_background"
+            android:layout_weight="0.7"
+            android:layout_margin="5dp" />
+
+        <EditText
+            android:id="@+id/et_input2"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_background"
+            android:fontFamily="@font/heebo_bold"
+            android:gravity="center"
+            android:hint="Enter Temperature"
+            android:inputType="numberDecimal"
+            android:maxLength="10"
+            android:textColor="@color/black"
+            android:textColorHint="#7E7E7E"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
+    </LinearLayout>
+>>>>>>> 4ce8e24 (Worked on MainActivity2)
 
 </LinearLayout>

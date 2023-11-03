@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+<<<<<<< HEAD
+=======
+import android.content.Intent;
+>>>>>>> 4ce8e24 (Worked on MainActivity2)
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -25,6 +29,14 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemC
 
     @Override
     public void onItemClicked(int index) {
+<<<<<<< HEAD
         Toast.makeText(this, ApplicationClass.listItems.get(index).getName(), Toast.LENGTH_SHORT).show();
+=======
+        Toast.makeText(this, ApplicationClass.listItems.get(index).getName()+index, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        intent.putExtra("index",index);
+        intent.putExtra("itemName",ApplicationClass.listItems.get(index).getName());
+        startActivity(intent);
+>>>>>>> 4ce8e24 (Worked on MainActivity2)
     }
 }
