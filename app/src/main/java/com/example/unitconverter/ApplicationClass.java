@@ -6,10 +6,8 @@ import java.util.ArrayList;
 
 public class ApplicationClass extends Application {
     public static ArrayList<ListItems> listItems;
-<<<<<<< HEAD
-=======
+
     public final static String[] temperatureUnit ={"Celsius","Fahrenheit","Kelvin","Rankine","Reaumur"};
->>>>>>> 4ce8e24 (Worked on MainActivity2)
     @Override
     public void onCreate() {
         super.onCreate();

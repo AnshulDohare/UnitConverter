@@ -2,11 +2,8 @@ package com.example.unitconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-<<<<<<< HEAD
-import android.os.Bundle;
 
-public class MainActivity2 extends AppCompatActivity {
-=======
+import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,13 +26,12 @@ public class MainActivity2 extends AppCompatActivity {
     String firstUnit,secondUnit;
     TemperatureConvert temperatureConvert;
     @SuppressLint("SetTextI18n")
->>>>>>> 4ce8e24 (Worked on MainActivity2)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-<<<<<<< HEAD
-=======
+
         textMeasurement = findViewById(R.id.textMeasurement);
         firstInput = findViewById(R.id.et_input1);
         secondInput = findViewById(R.id.et_input2);
@@ -106,6 +102,5 @@ public class MainActivity2 extends AppCompatActivity {
                 secondInput.setText(result+"");
             }
         });
->>>>>>> 4ce8e24 (Worked on MainActivity2)
     }
 }
