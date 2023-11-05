@@ -23,6 +23,7 @@ public class MainActivity2 extends AppCompatActivity {
     ArrayAdapter<String> myAdapter;
     String firstUnit,secondUnit;
     TemperatureConvert temperatureConvert;
+    int index;
     @SuppressLint("SetTextI18n")
 
     @Override
@@ -37,29 +38,44 @@ public class MainActivity2 extends AppCompatActivity {
         secondSpinner = findViewById(R.id.spinner_second);
 
         String measurement = getIntent().getStringExtra("itemName");
-        int index = getIntent().getIntExtra("index",0);
-        textMeasurement.setText(measurement+"");
+        index = getIntent().getIntExtra("index",0);
+        textMeasurement.setText(measurement);
 
         switch (index){
             case 0:
-                Toast.makeText(this, "Length", Toast.LENGTH_SHORT).show();
-                finish();
+                units = ApplicationClass.lengthUnit;
+                myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+                firstSpinner.setAdapter(myAdapter);
+                secondSpinner.setAdapter(myAdapter);
                 break;
             case 1:
-                Toast.makeText(this, "Area", Toast.LENGTH_SHORT).show();
-                finish();
+                units = ApplicationClass.areaUnit;
+                myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+                firstSpinner.setAdapter(myAdapter);
+                secondSpinner.setAdapter(myAdapter);
                 break;
             case 2:
-                Toast.makeText(this, "Volume", Toast.LENGTH_SHORT).show();
-                finish();
+                units = ApplicationClass.volumeUnit;
+                myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+                firstSpinner.setAdapter(myAdapter);
+                secondSpinner.setAdapter(myAdapter);
                 break;
             case 3:
-                Toast.makeText(this, "Speed", Toast.LENGTH_SHORT).show();
-                finish();
+                units = ApplicationClass.speedUnit;
+                myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+                firstSpinner.setAdapter(myAdapter);
+                secondSpinner.setAdapter(myAdapter);
                 break;
             case 4:
-                Toast.makeText(this, "Weight", Toast.LENGTH_SHORT).show();
-                finish();
+                units = ApplicationClass.weightUnit;
+                myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+                firstSpinner.setAdapter(myAdapter);
+                secondSpinner.setAdapter(myAdapter);
                 break;
             case 5:
                 units = ApplicationClass.temperatureUnit;
@@ -70,16 +86,21 @@ public class MainActivity2 extends AppCompatActivity {
                 temperatureConvert = new TemperatureConvert();
                 break;
             case 6:
-                Toast.makeText(this, "Power", Toast.LENGTH_SHORT).show();
-                finish();
+                units = ApplicationClass.powerUnit;
+                myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+                firstSpinner.setAdapter(myAdapter);
+                secondSpinner.setAdapter(myAdapter);
                 break;
             case 7:
-                Toast.makeText(this, "Pressure", Toast.LENGTH_SHORT).show();
-                finish();
+                units = ApplicationClass.pressureUnit;
+                myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+                firstSpinner.setAdapter(myAdapter);
+                secondSpinner.setAdapter(myAdapter);
                 break;
             default:
                 startActivity(new Intent(MainActivity2.this, MainActivity.class));
-                finish();
                 finish();
         }
 
@@ -87,8 +108,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 firstUnit = units[position];
-                String i  = input.getText().toString();
-                result.setText(temperatureConvert.conversion(firstUnit,secondUnit,i,MainActivity2.this));
+                getResult();
             }
 
             @Override
@@ -99,8 +119,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 secondUnit = units[position];
-                String i  = input.getText().toString();
-                result.setText(temperatureConvert.conversion(firstUnit,secondUnit,i,MainActivity2.this));
+                getResult();
             }
 
             @Override
@@ -122,14 +141,40 @@ public class MainActivity2 extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                String i  = input.getText().toString();
-                if(index==5) {
-                    result.setText(temperatureConvert.conversion(firstUnit, secondUnit, i, MainActivity2.this));
-                }
-                else{
-                    Toast.makeText(MainActivity2.this, "Error", Toast.LENGTH_SHORT).show();
-                }
+                getResult();
             }
         });
+
+    }
+
+    public void getResult(){
+        String i  = input.getText().toString();
+        switch (index){
+            case 0:
+                Toast.makeText(MainActivity2.this, "length"+index, Toast.LENGTH_SHORT).show();
+                break;
+            case 1:
+                Toast.makeText(MainActivity2.this, "area"+index, Toast.LENGTH_SHORT).show();
+                break;
+            case 2:
+                Toast.makeText(MainActivity2.this, "volume", Toast.LENGTH_SHORT).show();
+                break;
+            case 3:
+                Toast.makeText(MainActivity2.this, "speed", Toast.LENGTH_SHORT).show();
+                break;
+            case 4:
+                Toast.makeText(MainActivity2.this, "weight", Toast.LENGTH_SHORT).show();
+                break;
+            case 5:
+                result.setText(temperatureConvert.conversion(firstUnit, secondUnit, i, MainActivity2.this));
+                break;
+            case 6:
+                Toast.makeText(MainActivity2.this, "power", Toast.LENGTH_SHORT).show();
+                break;
+            case 7:
+                Toast.makeText(MainActivity2.this, "pressure", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+        }
     }
 }

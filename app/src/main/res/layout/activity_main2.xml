@@ -31,29 +31,29 @@
         <Spinner
             android:id="@+id/spinner_first"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="0.7"
             android:background="@drawable/spinner_background"
-            tools:ignore="DuplicateSpeakableTextCheck" />
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
         <EditText
             android:id="@+id/et_input1"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/spinner_background"
-            android:fontFamily="@font/heebo_bold"
             android:gravity="center"
             android:hint="Enter Temperature"
             android:inputType="numberDecimal"
             android:maxLength="10"
+            android:padding="6dp"
             android:textColor="@color/black"
             android:textColorHint="#7E7E7E"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
-            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize,DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
     </LinearLayout>
 
     <LinearLayout
@@ -62,27 +62,29 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:background="@drawable/layout_background">
+
         <Spinner
             android:id="@+id/spinner_second"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:background="@drawable/spinner_background"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="0.7"
-            android:layout_margin="5dp" />
+            android:background="@drawable/spinner_background"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/text_result"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/spinner_background"
-            android:fontFamily="@font/heebo_bold"
             android:gravity="center"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:lineSpacingExtra="-7dp"
+            android:padding="6dp"
             tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
     </LinearLayout>
 </LinearLayout>
