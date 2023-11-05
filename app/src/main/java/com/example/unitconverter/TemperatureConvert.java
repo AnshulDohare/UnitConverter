@@ -6,10 +6,6 @@ import android.widget.Toast;
 import java.text.DecimalFormat;
 
 public class TemperatureConvert {
-    String firstUnit1;
-    String secondUnit2;
-    String firstInput1;
-    String SecondInput2;
     DecimalFormat df = new DecimalFormat("#.####");
     public double conversion(String firstUnit, String SecondUnit, String input, Context context){
         double calculate;

@@ -1,9 +1,5 @@
 package com.example.unitconverter;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
-import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,12 +12,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity2 extends AppCompatActivity {
     TextView textMeasurement;
     Spinner firstSpinner,secondSpinner;
     EditText firstInput;
     EditText secondInput;
-    String units[];
+    String[] units;
     ArrayAdapter<String> myAdapter;
     String firstUnit,secondUnit;
     TemperatureConvert temperatureConvert;
