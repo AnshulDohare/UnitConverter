@@ -3,47 +3,131 @@ package com.example.unitconverter;
 import android.content.Context;
 import android.widget.Toast;
 
-import java.text.DecimalFormat;
-
 public class TemperatureConvert {
-    DecimalFormat df = new DecimalFormat("#.####");
-    public double conversion(String firstUnit, String SecondUnit, String input, Context context){
-        double calculate;
-        double res = 0;
+    public String conversion(String firstUnit, String secondUnit, String input, Context context){
+        double res;
         if(input.isEmpty()){
-            return res;
+            return "";
         }
         double number = Double.parseDouble(input);
 
 
-        if(firstUnit.equals("Celsius")){
-            switch (SecondUnit){
-                case "Celsius":
-                    res = number ;
-                    break;
-                case "Fahrenheit":
-                    calculate = number * (9 / 5.0) + 32;
-                    res = Double.parseDouble(df.format(calculate));
-                    break;
-                case "Kelvin":
-                    calculate = number + 273.15;
-                    res = Double.parseDouble(df.format(calculate));
-                    break;
-                case "Rankine":
-                    calculate = (number * 9 / 5) + 491.67;
-                    res = Double.parseDouble(df.format(calculate));
-                    break;
-                case "Reaumur":
-                    calculate = number * 0.8;
-                    res = Double.parseDouble(df.format(calculate));
-                    break;
-                default:
-                    Toast.makeText(context, "Something went wrong, Try Again...", Toast.LENGTH_SHORT).show();
-                    return res;
-            }
+        switch (firstUnit) {
+            case "Celsius":
+                switch (secondUnit) {
+                    case "Celsius":
+                        res = number;
+                        break;
+                    case "Fahrenheit":
+                        res = number * (9 / 5.0) + 32;
+                        break;
+                    case "Kelvin":
+                        res = number + 273.15;
+                        break;
+                    case "Rankine":
+                        res = (number * 9 / 5) + 491.67;
+                        break;
+                    case "Reaumur":
+                        res = number * 0.8;
+                        break;
+                    default:
+                        Toast.makeText(context, "Something went wrong, Try Again...", Toast.LENGTH_SHORT).show();
+                        return "";
+                }
+                break;
+            case "Fahrenheit":
+                switch (secondUnit) {
+                    case "Celsius":
+                        res = (number - 32) * 5 / 9;
+                        break;
+                    case "Fahrenheit":
+                        res = number;
+                        break;
+                    case "Kelvin":
+                        res = ((number - 32) * 5 / 9) + 273.15;
+                        break;
+                    case "Rankine":
+                        res = number + 459.67;
+                        break;
+                    case "Reaumur":
+                        res = (number - 32) * 4 / 9;
+                        break;
+                    default:
+                        Toast.makeText(context, "Something went wrong, Try Again...", Toast.LENGTH_SHORT).show();
+                        return "";
+                }
+                break;
+            case "Kelvin":
+                switch (secondUnit) {
+                    case "Celsius":
+                        res = number - 273.15;
+                        break;
+                    case "Fahrenheit":
+                        res = (number - 273.15) * 9 / 5 + 32;
+                        break;
+                    case "Kelvin":
+                        res = number;
+                        break;
+                    case "Rankine":
+                        res = number * 1.8;
+                        break;
+                    case "Reaumur":
+                        res = (number - 273.15) * 0.8;
+                        break;
+                    default:
+                        Toast.makeText(context, "Something went wrong, Try Again...", Toast.LENGTH_SHORT).show();
+                        return "";
+                }
+                break;
+            case "Rankine":
+                switch (secondUnit) {
+                    case "Celsius":
+                        res = (number - 32 - 459.67) / 1.8;
+                        break;
+                    case "Fahrenheit":
+                        res = number - 459.67;
+                        break;
+                    case "Kelvin":
+                        res = number / 1.8;
+                        break;
+                    case "Rankine":
+                        res = number;
+                        break;
+                    case "Reaumur":
+                        res = (number - 32 - 459.67) / 2.25;
+                        break;
+                    default:
+                        Toast.makeText(context, "Something went wrong, Try Again...", Toast.LENGTH_SHORT).show();
+                        return "";
+                }
+                break;
+            case "Reaumur":
+                switch (secondUnit) {
+                    case "Celsius":
+                        res = number * 1.25;
+                        break;
+                    case "Fahrenheit":
+                        res = (number * 2.25) + 32;
+                        break;
+                    case "Kelvin":
+                        res = (number * 1.25) + 273.15;
+                        break;
+                    case "Rankine":
+                        res = (number * 2.25) + 459.67 + 32;
+                        break;
+                    case "Reaumur":
+                        res = number;
+                        break;
+                    default:
+                        Toast.makeText(context, "Something went wrong, Try Again...", Toast.LENGTH_SHORT).show();
+                        return "";
+                }
+                break;
+            default:
+                Toast.makeText(context, "Something went wrong, Try Again...", Toast.LENGTH_SHORT).show();
+                return "";
         }
-        return  res;
-
+        return String.valueOf(res);
     }
 
 }
