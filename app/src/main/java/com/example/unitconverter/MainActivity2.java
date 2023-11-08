@@ -15,6 +15,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.unitconverter.conversion.LengthConversion;
+import com.example.unitconverter.conversion.TemperatureConvert;
+
 public class MainActivity2 extends AppCompatActivity {
     TextView textMeasurement,result;
     Spinner firstSpinner,secondSpinner;
@@ -22,7 +25,6 @@ public class MainActivity2 extends AppCompatActivity {
     String[] units;
     ArrayAdapter<String> myAdapter;
     String firstUnit,secondUnit;
-    TemperatureConvert temperatureConvert;
     int index;
     @SuppressLint("SetTextI18n")
 
@@ -45,64 +47,44 @@ public class MainActivity2 extends AppCompatActivity {
             case 0:
                 units = ApplicationClass.lengthUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
-                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-                firstSpinner.setAdapter(myAdapter);
-                secondSpinner.setAdapter(myAdapter);
                 break;
             case 1:
                 units = ApplicationClass.areaUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
-                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-                firstSpinner.setAdapter(myAdapter);
-                secondSpinner.setAdapter(myAdapter);
                 break;
             case 2:
                 units = ApplicationClass.volumeUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
-                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-                firstSpinner.setAdapter(myAdapter);
-                secondSpinner.setAdapter(myAdapter);
                 break;
             case 3:
                 units = ApplicationClass.speedUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
-                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-                firstSpinner.setAdapter(myAdapter);
-                secondSpinner.setAdapter(myAdapter);
                 break;
             case 4:
                 units = ApplicationClass.weightUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
-                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-                firstSpinner.setAdapter(myAdapter);
-                secondSpinner.setAdapter(myAdapter);
                 break;
             case 5:
                 units = ApplicationClass.temperatureUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
-                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-                firstSpinner.setAdapter(myAdapter);
-                secondSpinner.setAdapter(myAdapter);
-                temperatureConvert = new TemperatureConvert();
                 break;
             case 6:
                 units = ApplicationClass.powerUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
-                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-                firstSpinner.setAdapter(myAdapter);
-                secondSpinner.setAdapter(myAdapter);
                 break;
             case 7:
                 units = ApplicationClass.pressureUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
-                myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-                firstSpinner.setAdapter(myAdapter);
-                secondSpinner.setAdapter(myAdapter);
                 break;
             default:
                 startActivity(new Intent(MainActivity2.this, MainActivity.class));
                 finish();
         }
+
+        myAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+        firstSpinner.setAdapter(myAdapter);
+        secondSpinner.setAdapter(myAdapter);
+
 
         firstSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -151,7 +133,7 @@ public class MainActivity2 extends AppCompatActivity {
         String i  = input.getText().toString();
         switch (index){
             case 0:
-                Toast.makeText(MainActivity2.this, "length"+index, Toast.LENGTH_SHORT).show();
+                result.setText(LengthConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));
                 break;
             case 1:
                 Toast.makeText(MainActivity2.this, "area"+index, Toast.LENGTH_SHORT).show();
@@ -166,7 +148,7 @@ public class MainActivity2 extends AppCompatActivity {
                 Toast.makeText(MainActivity2.this, "weight", Toast.LENGTH_SHORT).show();
                 break;
             case 5:
-                result.setText(temperatureConvert.conversion(firstUnit, secondUnit, i, MainActivity2.this));
+                result.setText(TemperatureConvert.conversion(firstUnit, secondUnit, i, MainActivity2.this));
                 break;
             case 6:
                 Toast.makeText(MainActivity2.this, "power", Toast.LENGTH_SHORT).show();

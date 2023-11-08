@@ -7,11 +7,11 @@ import java.util.ArrayList;
 public class ApplicationClass extends Application {
     public static ArrayList<ListItems> listItems;
 
-    public final static String[] lengthUnit = {"Kilometre","Metre","Decimetre","Centimetre","Millimetre", "Micrometre","Nanometre",
-            "Light year", "Yard","Foot","Mile","Inch"};
+    public final static String[] lengthUnit = {"Kilometre","Metre","Centimetre",
+             "Yard","Foot","Mile","Inch"};
 
-    public final static String[] areaUnit = {"Square Kilometre","Square Metre","Square Decimetre","Square Centimetre","Square Millimetre",
-            "Hectare","Acre","Square Mile","Square Yard","Square Foot","Square Inch"};
+    public final static String[] areaUnit = {"Square Kilometre","Square Metre","Hectare","Acre","Square Mile",
+            "Square Yard","Square Foot","Square Inch"};
 
     public final static String[] volumeUnit = {"Cubic Meter","Cubic Centimetre","Litre","Cubic Foot","Cubic Yard","Cubic Inch",};
 

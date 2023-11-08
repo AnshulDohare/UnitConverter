@@ -1,10 +1,10 @@
-package com.example.unitconverter;
+package com.example.unitconverter.conversion;
 
 import android.content.Context;
 import android.widget.Toast;
 
 public class TemperatureConvert {
-    public String conversion(String firstUnit, String secondUnit, String input, Context context){
+    public static String conversion(String firstUnit, String secondUnit, String input, Context context){
         double res;
         if(input.isEmpty()){
             return "";
