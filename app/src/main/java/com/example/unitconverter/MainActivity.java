@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemC
 
     @Override
     public void onItemClicked(int index) {
-        Toast.makeText(this, ApplicationClass.listItems.get(index).getName()+index, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, ApplicationClass.listItems.get(index).getName(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(MainActivity.this, MainActivity2.class);
         intent.putExtra("index",index);
         intent.putExtra("itemName",ApplicationClass.listItems.get(index).getName());

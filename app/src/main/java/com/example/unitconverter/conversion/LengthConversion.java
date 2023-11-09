@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 public class LengthConversion {
     public static String conversion(String firstUnit, String secondUnit, String input, Context context) {
-        double result = 0;
+        double result;
         if (input.isEmpty()) {
             return "";
         }

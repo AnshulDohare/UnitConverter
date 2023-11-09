@@ -45,7 +45,6 @@
             android:layout_weight="1"
             android:background="@drawable/spinner_background"
             android:gravity="center"
-            android:hint="Enter Temperature"
             android:inputType="numberDecimal"
             android:maxLength="10"
             android:padding="6dp"
@@ -53,7 +52,7 @@
             android:textColorHint="#7E7E7E"
             android:textSize="25sp"
             android:textStyle="bold"
-            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize,DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+            tools:ignore="Autofill,DuplicateSpeakableTextCheck,HardcodedText,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -83,7 +82,7 @@
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:lineSpacingExtra="-7dp"
+            android:lineSpacingExtra="-2dp"
             android:padding="6dp"
             tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
     </LinearLayout>

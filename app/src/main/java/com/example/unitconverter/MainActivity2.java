@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.unitconverter.conversion.AreaConversion;
 import com.example.unitconverter.conversion.LengthConversion;
 import com.example.unitconverter.conversion.TemperatureConvert;
 
@@ -47,34 +48,42 @@ public class MainActivity2 extends AppCompatActivity {
             case 0:
                 units = ApplicationClass.lengthUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                input.setHint("Enter Length");
                 break;
             case 1:
                 units = ApplicationClass.areaUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                input.setHint("Enter Area");
                 break;
             case 2:
                 units = ApplicationClass.volumeUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                input.setHint("Enter Volume");
                 break;
             case 3:
                 units = ApplicationClass.speedUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                input.setHint("Enter Speed");
                 break;
             case 4:
                 units = ApplicationClass.weightUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                input.setHint("Enter Weight");
                 break;
             case 5:
                 units = ApplicationClass.temperatureUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                input.setHint("Enter Temperature");
                 break;
             case 6:
                 units = ApplicationClass.powerUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                input.setHint("Enter Power");
                 break;
             case 7:
                 units = ApplicationClass.pressureUnit;
                 myAdapter = new ArrayAdapter<>(MainActivity2.this,R.layout.spinner_layout,units);
+                input.setHint("Enter Pressure");
                 break;
             default:
                 startActivity(new Intent(MainActivity2.this, MainActivity.class));
@@ -136,7 +145,7 @@ public class MainActivity2 extends AppCompatActivity {
                 result.setText(LengthConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));
                 break;
             case 1:
-                Toast.makeText(MainActivity2.this, "area"+index, Toast.LENGTH_SHORT).show();
+                result.setText(AreaConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));
                 break;
             case 2:
                 Toast.makeText(MainActivity2.this, "volume", Toast.LENGTH_SHORT).show();
