@@ -11,13 +11,17 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.unitconverter.conversion.AreaConversion;
 import com.example.unitconverter.conversion.LengthConversion;
+import com.example.unitconverter.conversion.PowerConversion;
+import com.example.unitconverter.conversion.PressureConversion;
+import com.example.unitconverter.conversion.SpeedConversion;
 import com.example.unitconverter.conversion.TemperatureConvert;
+import com.example.unitconverter.conversion.VolumeConversion;
+import com.example.unitconverter.conversion.WeightConversion;
 
 public class MainActivity2 extends AppCompatActivity {
     TextView textMeasurement,result;
@@ -148,22 +152,21 @@ public class MainActivity2 extends AppCompatActivity {
                 result.setText(AreaConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));
                 break;
             case 2:
-                Toast.makeText(MainActivity2.this, "volume", Toast.LENGTH_SHORT).show();
-                break;
+                result.setText(VolumeConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));break;
             case 3:
-                Toast.makeText(MainActivity2.this, "speed", Toast.LENGTH_SHORT).show();
+                result.setText(SpeedConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));
                 break;
             case 4:
-                Toast.makeText(MainActivity2.this, "weight", Toast.LENGTH_SHORT).show();
+                result.setText(WeightConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));
                 break;
             case 5:
                 result.setText(TemperatureConvert.conversion(firstUnit, secondUnit, i, MainActivity2.this));
                 break;
             case 6:
-                Toast.makeText(MainActivity2.this, "power", Toast.LENGTH_SHORT).show();
+                result.setText(PowerConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));
                 break;
             case 7:
-                Toast.makeText(MainActivity2.this, "pressure", Toast.LENGTH_SHORT).show();
+                result.setText(PressureConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));
                 break;
             default:
         }

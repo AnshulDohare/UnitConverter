@@ -13,7 +13,7 @@ public class ApplicationClass extends Application {
     public final static String[] areaUnit = {"Square Kilometre","Square Metre","Hectare","Acre","Square Mile",
             "Square Yard","Square Foot","Square Inch"};
 
-    public final static String[] volumeUnit = {"Cubic Meter","Cubic Centimetre","Litre","Cubic Foot","Cubic Yard","Cubic Inch",};
+    public final static String[] volumeUnit = {"Cubic Metre","Cubic Centimetre","Litre","Cubic Foot","Cubic Yard","Cubic Inch",};
 
     public final static String[] speedUnit = {"Kilometre/Second","Mile/Hour","Inch/Second","Metre/Second","Kilometre/Hour"};
 
