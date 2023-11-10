@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -139,7 +141,6 @@ public class MainActivity2 extends AppCompatActivity {
                 getResult();
             }
         });
-
     }
 
     public void getResult(){
@@ -152,7 +153,8 @@ public class MainActivity2 extends AppCompatActivity {
                 result.setText(AreaConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));
                 break;
             case 2:
-                result.setText(VolumeConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));break;
+                result.setText(VolumeConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));
+                break;
             case 3:
                 result.setText(SpeedConversion.conversion(firstUnit,secondUnit,i,MainActivity2.this));
                 break;

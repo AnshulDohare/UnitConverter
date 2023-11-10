@@ -11,9 +11,9 @@ public class VolumeConversion {
         }
         double number = Double.parseDouble(input);
         switch (firstUnit){
-            case "Cubic Meter":
+            case "Cubic Metre":
                 switch (secondUnit){
-                    case "Cubic Meter":
+                    case "Cubic Metre":
                         result = number;
                         break;
                     case "Cubic Centimetre":
@@ -38,7 +38,7 @@ public class VolumeConversion {
                 break;
             case "Cubic Centimetre":
                 switch (secondUnit){
-                    case "Cubic Meter":
+                    case "Cubic Metre":
                         result = number/1_000_000;
                         break;
                     case "Cubic Centimetre":
@@ -63,7 +63,7 @@ public class VolumeConversion {
                 break;
             case "Litre":
                 switch (secondUnit){
-                    case "Cubic Meter":
+                    case "Cubic Metre":
                         result = number/1000;
                         break;
                     case "Cubic Centimetre":
@@ -88,7 +88,7 @@ public class VolumeConversion {
                 break;
             case "Cubic Foot":
                 switch (secondUnit){
-                    case "Cubic Meter":
+                    case "Cubic Metre":
                         result = number/35.3147;
                         break;
                     case "Cubic Centimetre":
@@ -113,7 +113,7 @@ public class VolumeConversion {
                 break;
             case "Cubic Yard":
                 switch (secondUnit){
-                    case "Cubic Meter":
+                    case "Cubic Metre":
                         result = number/1.3079;
                         break;
                     case "Cubic Centimetre":
@@ -138,7 +138,7 @@ public class VolumeConversion {
                 break;
             case "Cubic Inch":
                 switch (secondUnit){
-                    case "Cubic Meter":
+                    case "Cubic Metre":
                         result = number/61_023.8445;
                         break;
                     case "Cubic Centimetre":
