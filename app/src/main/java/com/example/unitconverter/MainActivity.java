@@ -1,12 +1,12 @@
 package com.example.unitconverter;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemClicked{
     RecyclerView recyclerView;
@@ -31,5 +31,6 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemC
         intent.putExtra("index",index);
         intent.putExtra("itemName",ApplicationClass.listItems.get(index).getName());
         startActivity(intent);
+        overridePendingTransition(R.anim.right_to_left,R.anim.right_to_left);
     }
 }

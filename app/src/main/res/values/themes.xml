@@ -6,7 +6,7 @@
     </style>
 
     <style name="Theme.UnitConverter" parent="Base.Theme.UnitConverter" >
-        <item name="colorPrimary">@color/aqua</item>
+        <item name="colorPrimary">@color/grey</item>
         <item name="colorSecondary">@color/black</item>
     </style>
 </resources>
