@@ -6,7 +6,7 @@ import android.widget.Toast;
 public class LengthConversion {
     public static String conversion(String firstUnit, String secondUnit, String input, Context context) {
         double result;
-        if (input.isEmpty()) {
+        if (input.isEmpty()||input.equals(".")) {
             return "";
         }
         double number = Double.parseDouble(input);
@@ -212,6 +212,5 @@ public class LengthConversion {
                 return "";
         }
         return String.valueOf(result);
-
     }
 }
