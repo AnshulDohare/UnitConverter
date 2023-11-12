@@ -6,7 +6,7 @@ import android.widget.Toast;
 public class VolumeConversion {
     public static String conversion(String firstUnit, String secondUnit, String input, Context context) {
         double result;
-        if (input.isEmpty()) {
+        if (input.isEmpty()||input.equals(".")) {
             return "";
         }
         double number = Double.parseDouble(input);
