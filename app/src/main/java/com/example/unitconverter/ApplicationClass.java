@@ -22,7 +22,7 @@ public class ApplicationClass extends Application {
 
     public final static String[] powerUnit = {"Watt","Kilowatt","Joule/Second","Horse Power","Kilocalorie/Second"};
 
-    public final static String[] pressureUnit = {"Bar","Millibar","Kilopascal","Pounds/Square Inch","Pounds/Square Foot"};
+    public final static String[] pressureUnit = {"Bar","Pascal","Standard atmosphere","Pounds/Square Inch","Torr"};
     @Override
     public void onCreate() {
         super.onCreate();
