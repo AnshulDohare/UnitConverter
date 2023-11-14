@@ -21,5 +21,5 @@ Usage:
 - Enter the value you want to convert.
 - View the converted result in real-time.
 
-🤝 If you have any issues,questions, suggestions, feedback or want to contribute, drop message on https://www.linkedin.com/in/anshuldohare/ . Teamwork makes the dream work! 
+🤝 If you have any issues,questions, suggestions, feedback or want to contribute, feel free to connect on Linkedin - https://www.linkedin.com/in/anshuldohare/ . Teamwork makes the dream work! 
  
